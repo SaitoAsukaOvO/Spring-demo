@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--使用spring来创建对象，在spring这些称为bean    -->
+    <bean id="hello" class="com.dyh.pojo.Hello">
+        <property name="str" value="Spring"/>
+    </bean>
+
+    <bean id="mysqlImpl" class="com.dyh.dao.MysqlImpl"/>
+    <bean id="oracleImpl" class="com.dyh.dao.OracleImpl"/>
+
+<!--ref：是引用spring容器中创建好的对象
+    value: 基本数据类型-->
+    <bean id="UserServiceImpl" class="com.dyh.service.UserServiceImpl">
+        <property name="userDao" ref="mysqlImpl"/>
+    </bean>
+
+</beans>
