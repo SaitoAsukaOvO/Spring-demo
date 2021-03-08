@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.dyh.pojo.Address">
+        <property name="address" value="Irvine"></property>
+    </bean>
+
+    <bean id="student" class="com.dyh.pojo.Student">
+        <!--普通值注入, value-->
+        <property name="name" value="dyh"/>
+
+        <!--bean注入，ref-->
+        <property name="address" ref="address"/>
+
+        <!--数组注入，ref-->
+        <property name="books">
+            <array>
+                <value>红楼</value>
+                <value>西游</value>
+                <value>水浒</value>
+                <value>三国</value>
+            </array>
+        </property>
+
+        <!--list-->
+        <property name="hobbies">
+            <list>
+                <value>coding</value>
+                <value>gym</value>
+                <value>basketball</value>
+            </list>
+        </property>
+
+        <!--map-->
+        <property name="card">
+            <map>
+                <entry key="ID" value="11112222233333"></entry>
+                <entry key="bankCard" value="123456"></entry>
+            </map>
+        </property>
+
+        <!--set-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>COD</value>
+                <value>COC</value>
+            </set>
+        </property>
+
+        <!--空字符-->
+<!--        <property name="wife" value=""/>-->
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--properties
+        key=value
+        key=value
+        -->
+        <property name="info">
+            <props>
+                <prop key="StudentID">20190525</prop>
+                <prop key="Sex">Male</prop>
+                <prop key="Name">abc</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
