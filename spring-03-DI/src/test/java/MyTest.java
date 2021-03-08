@@ -1,4 +1,6 @@
 import com.dyh.pojo.Student;
+import com.dyh.pojo.User;
+import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyTest {
@@ -20,5 +22,12 @@ public class MyTest {
          * info={StudentID=20190525, Name=abc, Sex=Male}
          * }
          */
+    }
+
+    @Test
+    public void test2() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("userbean.xml");
+        User user = context.getBean("user", User.class);
+        System.out.println(user);
     }
 }
