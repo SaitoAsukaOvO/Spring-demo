@@ -1,8 +1,14 @@
 package com.dyh.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class People {
 
+    @Autowired
     private Cat cat;
+    @Autowired
+    //@Qualifier(value = "dog222")
     private Dog dog;
     private String name;
 

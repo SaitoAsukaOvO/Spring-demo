@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="cat" class="com.dyh.pojo.Cat">
-    </bean>
+    <context:annotation-config/>
 
-    <bean id="dog" class="com.dyh.pojo.Dog">
-    </bean>
+    <bean id="cat" class="com.dyh.pojo.Cat"/>
+    <bean id="dog" class="com.dyh.pojo.Dog"/>
+    <bean id="people" class="com.dyh.pojo.People"/>
 
 
 
-    <!--byName： 会自动再容器上下文中查找，和自己set方法后面的值对应的beanid -->
-    <bean id="people" class="com.dyh.pojo.People" autowire="byName">
-        <property name="name" value="dyh"/>
-    </bean>
+<!--    &lt;!&ndash;byName： 会自动再容器上下文中查找，和自己set方法后面的值对应的beanid &ndash;&gt;-->
+<!--    <bean id="people" class="com.dyh.pojo.People" autowire="byName">-->
+<!--        <property name="name" value="dyh"/>-->
+<!--    </bean>-->
 
-    <!--byType： 会自动再容器上下文中查找，和自己set对象属性相同的beanid (装配的类型必须全局只有一个)-->
-    <bean id="people" class="com.dyh.pojo.People" autowire="byType">
-        <property name="name" value="dyh"/>
-    </bean>
+<!--    &lt;!&ndash;byType： 会自动再容器上下文中查找，和自己set对象属性相同的beanid (装配的类型必须全局只有一个)&ndash;&gt;-->
+<!--    <bean id="people" class="com.dyh.pojo.People" autowire="byType">-->
+<!--        <property name="name" value="dyh"/>-->
+<!--    </bean>-->
 
 
 </beans>
