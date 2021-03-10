@@ -13,6 +13,7 @@
         <module>spring-02-ioc2</module>
         <module>spring-03-DI</module>
         <module>spring-04-Autowired</module>
+        <module>spring-05-Annotation</module>
     </modules>
 
     <dependencies>
