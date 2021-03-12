@@ -7,8 +7,7 @@ public class MyTest {
     @Test
     public void test() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        //
         UserService userService = (UserService) context.getBean("userService");
-        userService.add();
+        userService.query();
     }
 }
