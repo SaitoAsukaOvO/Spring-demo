@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.dyh.service.UserServiceImpl"/>
+    <bean id="beforeLog" class="com.dyh.log.BeforeLog"/>
+    <bean id="afterLog" class="com.dyh.log.AfterLog"/>
+
+    <!--使用原生的Spring Api接口-->
+    <!--配置aop-->
+    <aop:config>
+        <!--定义切入点-->
+        <aop:pointcut id="pointcut" expression="execution(* com.dyh.service.UserServiceImpl.*(..))"/>
+
+        <!--执行环绕增强-->
+        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+    </aop:config>
+
+
+</beans>

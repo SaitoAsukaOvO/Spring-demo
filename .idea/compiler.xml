@@ -9,6 +9,7 @@
         <module name="spring-02-ioc2" />
         <module name="spring-03-DI" />
         <module name="spring-04-Autowired" />
+        <module name="spring-08-aop" />
         <module name="spring-05-Annotation" />
         <module name="spring-07-proxy" />
         <module name="spring-01-ioc1" />

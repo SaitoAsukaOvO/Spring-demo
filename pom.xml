@@ -16,6 +16,7 @@
         <module>spring-05-Annotation</module>
         <module>spring-06-appconfig</module>
         <module>spring-07-proxy</module>
+        <module>spring-08-aop</module>
     </modules>
 
     <dependencies>
