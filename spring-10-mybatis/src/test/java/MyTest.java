@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +24,15 @@ public class MyTest {
         List<User> users = mapper.selectUser();
         for (User user : users) {
             System.out.println(user.toString());
+        }
+    }
+
+    @Test
+    public void test1(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
+        UserMapper userMapper = context.getBean("userMapper", UserMapper.class);
+        for (User user : userMapper.selectUser()) {
+            System.out.println(user);
         }
     }
 }
