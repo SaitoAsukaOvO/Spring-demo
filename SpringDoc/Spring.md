@@ -589,11 +589,11 @@ Test:
 
 ## 5. bean的作用域：
 
-![bean作用域](.\img\bean作用域.png)
+![bean作用域](https://github.com/SaitoAsukaOvO/Spring-demo/tree/main/SpringDoc/img/bean作用域.png)
 
 ### singleton（默认）：
 
-![singleton](.\img\singleton.png)
+![singleton](https://github.com/SaitoAsukaOvO/Spring-demo/blob/main/SpringDoc/img/singleton.png)
 
 ```xml
 <bean id="accountService" class="com.something.DefaultAccountService"/>
@@ -606,7 +606,7 @@ Test:
 
 ### prototype:
 
-![prototype](.\img\prototype.png)
+![prototype](https://github.com/SaitoAsukaOvO/Spring-demo/blob/main/SpringDoc/img/prototype.png)
 
 ```xml
 <bean id="accountService" class="com.something.DefaultAccountService" scope="prototype"/>
