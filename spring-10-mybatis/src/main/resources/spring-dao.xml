@@ -24,8 +24,4 @@
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
-    <bean id="userMapper" class="com.dyh.mapper.UserMapperImpl">
-        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
-    </bean>
-
 </beans>
